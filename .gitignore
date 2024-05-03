@@ -1,0 +1,7 @@
+
+# dependencies
+/node_modules
+/src/Components
+/src/Hooks
+/src/Redux
+/src/Utils
