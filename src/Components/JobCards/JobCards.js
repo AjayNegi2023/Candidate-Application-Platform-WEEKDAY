@@ -4,6 +4,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import JobDetails from "../JobDetails/JobDetails";
 import { DollarSign } from 'react-feather';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+import TodayIcon from '@mui/icons-material/Today';
 
 const JobCards = ({ job }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,8 +19,8 @@ const JobCards = ({ job }) => {
         <div className='container'>
           <img className='logo' src={job?.logoUrl} alt='Company Logo' />
           <div className='details'>
-            <h1 className='title'>{job?.jobTitle ? job?.jobTitle : job?.jobRole.toUpperCase()+"DEVELOPER"}</h1>
-            <p className='company'>{job?.companyName ? job?.companyName  :""}</p>
+            <h1 className='title'>{job?.jobTitle ? job?.jobTitle : job?.jobRole.toUpperCase() + " DEVELOPER"}</h1>
+            <p className='company'>{job?.companyName ? job?.companyName : ""}</p>
           </div>
         </div>
 
@@ -37,7 +38,7 @@ const JobCards = ({ job }) => {
           (job?.minExp != null || job?.maxExp != null) &&
           (<div className='info'>
             <div className='icon-label'>
-              <PlaceIcon className='icon' />
+              <TodayIcon className='Expicon' />
               <p className='label'>Experience</p>
             </div>
             <div className='info-text'>
@@ -67,7 +68,7 @@ const JobCards = ({ job }) => {
 
         <p className="text">
           {job?.jobDetailsFromCompany.slice(0, 500)}
-          <span onClick={toggleModal} className="read-or-hide" style={{ color: 'green' }}>
+          <span onClick={toggleModal} className="read-or-hide" style={{ color: 'green', fontSize: '1.1rem' }}>
             {job?.jobDetailsFromCompany.length > 500 ? '...read more' : ''}
           </span>
           <span className="description-bottom">{job?.jobDetailsFromCompany.slice(500)}</span>
