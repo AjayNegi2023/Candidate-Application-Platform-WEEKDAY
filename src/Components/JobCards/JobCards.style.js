@@ -1,23 +1,30 @@
 import styled from "styled-components";
 
-
 const Wrapper = styled.div `
-margin-top: 2rem;
-cursor: pointer;
-transition: all 0.3s;
-max-width: calc(33.33% - 5rem);
-margin: 1rem;
-border: 1px solid #ccc;
-border-radius: 0.5rem;
-padding: 1rem;
-display: flex;
-flex-direction: column;
-overflow: hidden;
-position: relative;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  max-width: calc(33.33% - 5rem);
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
 
-&:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (max-width: 1024px) {
+    max-width: calc(50% - 5rem);
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: calc(100% - 2rem);
+  }
 
   .container {
     display: flex;
@@ -56,21 +63,23 @@ position: relative;
     margin-bottom: -0.7rem;
   }
 
-  .locationIcon{
-    color:blue;
+  .locationIcon {
+    color: blue;
   }
-  .salaryIcon{
-    color:goldenrod;
+  .salaryIcon {
+    color: goldenrod;
   }
-  .aboutIcon{
-    color:blue;
+  .aboutIcon,
+  .Expicon {
+    color: blue;
   }
- 
+
+
   .icon-label {
     display: flex;
     align-items: center;
     margin-right: 1rem;
-    width: 120px; 
+    width: 120px;
   }
 
   .label {
@@ -110,13 +119,16 @@ position: relative;
 
   .text {
     position: relative;
+    text-align: justify; 
+    display: inline-block; 
+    width: 100%; 
   }
 
   .read-or-hide {
     position: absolute;
     bottom: 20%;
     left: 25%;
-    background-color: rgba(255, 255, 255, 0.8); 
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 4px 8px;
     cursor: pointer;
     z-index: 1;
